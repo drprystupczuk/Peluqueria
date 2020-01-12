@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -42,6 +45,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.tablaMultiUso = new System.Windows.Forms.DataGridView();
+            this.cmdModificar = new System.Windows.Forms.Button();
+            this.cmdEliminar = new System.Windows.Forms.Button();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gpbModBor = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmdBuscar = new System.Windows.Forms.Button();
+            this.cmdCancelar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaMultiUso)).BeginInit();
+            this.gpbModBor.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -67,7 +82,7 @@
             this.txtName.Location = new System.Drawing.Point(92, 64);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 20);
-            this.txtName.TabIndex = 6;
+            this.txtName.TabIndex = 0;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // txtApellido
@@ -75,15 +90,15 @@
             this.txtApellido.Location = new System.Drawing.Point(92, 90);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(121, 20);
-            this.txtApellido.TabIndex = 7;
+            this.txtApellido.TabIndex = 1;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(92, 270);
+            this.btnRegistrar.Location = new System.Drawing.Point(92, 254);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 12;
+            this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Text = "Cargar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -102,7 +117,7 @@
             this.dtpFechaCumple.Location = new System.Drawing.Point(92, 193);
             this.dtpFechaCumple.Name = "dtpFechaCumple";
             this.dtpFechaCumple.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaCumple.TabIndex = 14;
+            this.dtpFechaCumple.TabIndex = 5;
             // 
             // label2
             // 
@@ -119,14 +134,14 @@
             this.txtCorreo.Location = new System.Drawing.Point(92, 140);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(200, 20);
-            this.txtCorreo.TabIndex = 19;
+            this.txtCorreo.TabIndex = 3;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(92, 114);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(200, 20);
-            this.txtDireccion.TabIndex = 18;
+            this.txtDireccion.TabIndex = 2;
             // 
             // label3
             // 
@@ -151,7 +166,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(92, 167);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(121, 20);
-            this.txtTelefono.TabIndex = 21;
+            this.txtTelefono.TabIndex = 4;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label5
@@ -163,12 +178,151 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Teléfono:";
             // 
+            // tablaMultiUso
+            // 
+            this.tablaMultiUso.AllowUserToAddRows = false;
+            this.tablaMultiUso.AllowUserToDeleteRows = false;
+            this.tablaMultiUso.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.tablaMultiUso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaMultiUso.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaMultiUso.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaMultiUso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.tablaMultiUso.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaMultiUso.DefaultCellStyle = dataGridViewCellStyle9;
+            this.tablaMultiUso.Location = new System.Drawing.Point(15, 283);
+            this.tablaMultiUso.Name = "tablaMultiUso";
+            this.tablaMultiUso.ReadOnly = true;
+            this.tablaMultiUso.RowHeadersVisible = false;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkRed;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DarkRed;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tablaMultiUso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaMultiUso.Size = new System.Drawing.Size(581, 134);
+            this.tablaMultiUso.TabIndex = 10;
+            // 
+            // cmdModificar
+            // 
+            this.cmdModificar.Location = new System.Drawing.Point(384, 67);
+            this.cmdModificar.Name = "cmdModificar";
+            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
+            this.cmdModificar.TabIndex = 8;
+            this.cmdModificar.Text = "Modificar";
+            this.cmdModificar.UseVisualStyleBackColor = true;
+            this.cmdModificar.Click += new System.EventHandler(this.cmdModificar_Click);
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.Location = new System.Drawing.Point(465, 67);
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
+            this.cmdEliminar.TabIndex = 9;
+            this.cmdEliminar.Text = "Borrar";
+            this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.Location = new System.Drawing.Point(92, 219);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(121, 20);
+            this.txtDocumento.TabIndex = 6;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 222);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Documento:";
+            // 
+            // gpbModBor
+            // 
+            this.gpbModBor.Controls.Add(this.cmdCancelar);
+            this.gpbModBor.Controls.Add(this.cmdBuscar);
+            this.gpbModBor.Controls.Add(this.textBox1);
+            this.gpbModBor.Location = new System.Drawing.Point(384, 112);
+            this.gpbModBor.Name = "gpbModBor";
+            this.gpbModBor.Size = new System.Drawing.Size(212, 123);
+            this.gpbModBor.TabIndex = 26;
+            this.gpbModBor.TabStop = false;
+            this.gpbModBor.Text = "Ingrese Documento";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(35, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(145, 20);
+            this.textBox1.TabIndex = 27;
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Location = new System.Drawing.Point(35, 77);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
+            this.cmdBuscar.TabIndex = 27;
+            this.cmdBuscar.Text = "Buscar";
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            // 
+            // cmdCancelar
+            // 
+            this.cmdCancelar.Location = new System.Drawing.Point(116, 77);
+            this.cmdCancelar.Name = "cmdCancelar";
+            this.cmdCancelar.Size = new System.Drawing.Size(75, 23);
+            this.cmdCancelar.TabIndex = 28;
+            this.cmdCancelar.Text = "Cancelar";
+            this.cmdCancelar.UseVisualStyleBackColor = true;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(380, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(156, 20);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Clientas Cargadas";
+            // 
             // frmCargarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
-            this.ClientSize = new System.Drawing.Size(546, 332);
+            this.ClientSize = new System.Drawing.Size(677, 464);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.gpbModBor);
+            this.Controls.Add(this.txtDocumento);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmdEliminar);
+            this.Controls.Add(this.cmdModificar);
+            this.Controls.Add(this.tablaMultiUso);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCorreo);
@@ -188,6 +342,9 @@
             this.Name = "frmCargarCliente";
             this.Text = "Cargar";
             this.Load += new System.EventHandler(this.Cargar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tablaMultiUso)).EndInit();
+            this.gpbModBor.ResumeLayout(false);
+            this.gpbModBor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +366,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView tablaMultiUso;
+        private System.Windows.Forms.Button cmdModificar;
+        private System.Windows.Forms.Button cmdEliminar;
+        private System.Windows.Forms.TextBox txtDocumento;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox gpbModBor;
+        private System.Windows.Forms.Button cmdBuscar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button cmdCancelar;
+        private System.Windows.Forms.Label label7;
     }
 }

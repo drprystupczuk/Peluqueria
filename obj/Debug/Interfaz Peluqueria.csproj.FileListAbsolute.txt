@@ -23,3 +23,16 @@ F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.3 
 F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.3 (clase conexion)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmInicio.resources
 F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.3 (clase conexion)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmCargarCliente.resources
 F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.3 (clase conexion)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmCargarConsulta.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\Interfaz Peluqueria.exe.config
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\Interfaz Peluqueria.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\Interfaz Peluqueria.pdb
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csprojAssemblyReference.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmCargarConsulta.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmCargarCliente.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmGenerico.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmInicio.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.Properties.Resources.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.GenerateResource.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.CoreCompileInputs.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.pdb

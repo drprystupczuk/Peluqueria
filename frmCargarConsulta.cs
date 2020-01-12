@@ -21,7 +21,7 @@ namespace Interfaz_Peluqueria
 
         private void Cargar_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void lblObservaciones_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Interfaz_Peluqueria
                     t.pObservaciones = txtObservaciones.Text;
                     //t.pFecTransaccion = 
 
-                    MessageBox.Show(con.InsertarConsulta(t.cCli.pIdCliente, DateTime.Now, t.pObservaciones, t.pTratamiento, t.pColor, t.pProductos));
+                    MessageBox.Show(con.InsertarConsulta(t.cCli.pDocumento, DateTime.Now, t.pObservaciones, t.pTratamiento, t.pColor, t.pProductos));
                     Limpiar();
                 }
             }
@@ -67,14 +67,14 @@ namespace Interfaz_Peluqueria
             txtObservaciones.Text = "";
             txtProductos.Text = "";
             txtTratamiento.Text ="";
-            lstClientas.SelectedIndex = -1;
+            cmbClientas.SelectedIndex = -1;
         }
         private bool Validacion()
         {
-            if (lstClientas.SelectedIndex == -1)
+            if (cmbClientas.SelectedIndex == -1)
             {
                 MessageBox.Show("Elija una clienta", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                lstClientas.Focus();
+                cmbClientas.Focus();
                 return false;
             }
             else if (txtColor.Text == "")
@@ -100,5 +100,7 @@ namespace Interfaz_Peluqueria
                 return true;
             }
         }
+
+
     }
 }

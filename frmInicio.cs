@@ -12,8 +12,10 @@ namespace Interfaz_Peluqueria
 {
     public partial class frmInicio : Form
     {
+        Conexion c;
         public frmInicio()
         {
+            c = new Conexion();
             InitializeComponent();
         }
 
@@ -28,7 +30,18 @@ namespace Interfaz_Peluqueria
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
             lblFecha.Text = DateTime.Now.ToLongDateString();
 
-            Conexion c = new Conexion();
+            c.cargarTabla(tablaMultiUso, "cumpleaños");
+        }
+
+
+        private void cmdCumples_Click(object sender, EventArgs e)
+        {
+            c.cargarTabla(tablaMultiUso, "cumpleaños");
+        }
+
+        private void cmdAvisos_Click(object sender, EventArgs e)
+        {
+            c.cargarTabla(tablaMultiUso, "avisos");
         }
     }
 }

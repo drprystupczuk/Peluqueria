@@ -11,7 +11,7 @@ namespace Interfaz_Peluqueria
     {
 
         //atributos
-        int idCliente;
+        int documento;
         string nombre;
         string apellido;
         string direccion;
@@ -24,7 +24,7 @@ namespace Interfaz_Peluqueria
         //Constructor de la clase
         public Cliente()
         {
-            idCliente = 0;
+            documento = 0;
             nombre = "";
             apellido = "";
             direccion = "";
@@ -35,10 +35,11 @@ namespace Interfaz_Peluqueria
 
         //Public SET//GET//
 
-        public int pIdCliente
+
+        public int pDocumento
         {
-            set { idCliente = value; }
-            get { return idCliente; }
+            set { documento = value; }
+            get { return documento; }
         }
         public string pNombre
         {

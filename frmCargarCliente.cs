@@ -20,7 +20,9 @@ namespace Interfaz_Peluqueria
 
         private void Cargar_Load(object sender, EventArgs e)
         {
+            con.cargarTabla(tablaMultiUso, "clientes");
 
+            manejoForm(false);
         }
 
         private void lblObservaciones_Click(object sender, EventArgs e)
@@ -42,16 +44,18 @@ namespace Interfaz_Peluqueria
             {
                 if (Validacion())
                 {
-                    //id es automatico
+                    
                     c.pNombre = txtName.Text;
                     c.pApellido = txtApellido.Text;
                     c.pDireccion = txtDireccion.Text;
                     c.pFecNacimiento = dtpFechaCumple.Value;
                     c.pCorreo = txtCorreo.Text;
                     c.pTelefono = txtTelefono.Text;
+                    c.pDocumento = Convert.ToInt32(txtDocumento.Text);
 
-                    MessageBox.Show(con.InsertarClienta(c.pNombre, c.pApellido, c.pDireccion, c.pFecNacimiento, c.pCorreo, c.pTelefono));
+                    MessageBox.Show(con.InsertarClienta(c.pDocumento,c.pNombre, c.pApellido, c.pDireccion, c.pFecNacimiento, c.pCorreo, c.pTelefono));
                     Limpiar();
+                    con.cargarTabla(tablaMultiUso, "clientes");
                 }
             }
             catch (Exception ex)
@@ -70,6 +74,7 @@ namespace Interfaz_Peluqueria
             txtName.Text = "";
             txtTelefono.Text = "";
             dtpFechaCumple.Value = DateTime.Now;
+            txtDocumento.Text = "";
 
         }
         private bool Validacion()
@@ -108,6 +113,18 @@ namespace Interfaz_Peluqueria
             {
                 MessageBox.Show("Ingrese una fecha de nacimiento válida", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpFechaCumple.Focus();
+                return false;
+            }
+            else if (txtDocumento.Text =="")
+            {
+                MessageBox.Show("El DNI es un campo obligatorio.", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDocumento.Focus();
+                return false;
+            }
+            else if (con.personaRegistrada(Convert.ToInt32(txtDocumento.Text)) !=0)
+            {
+                MessageBox.Show("El DNI ya está registrado en la base de datos.", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDocumento.Focus();
                 return false;
             }
             else
@@ -177,7 +194,55 @@ namespace Interfaz_Peluqueria
             {
                 e.Handled = true;
             }
+
+
+
         }
+
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         #endregion
+
+        private void cmdModificar_Click(object sender, EventArgs e)
+        {
+            manejoForm(true);
+        }
+
+        private void manejoForm(bool ac)
+        {
+            gpbModBor.Visible = ac;
+            gpbModBor.Enabled = ac;
+
+
+            btnRegistrar.Enabled = !ac;
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            manejoForm(true);
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            manejoForm(false);
+        }
     }
 }

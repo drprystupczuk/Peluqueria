@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.peluqueriaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tablaCumpleaños = new System.Windows.Forms.DataGridView();
-            this.tablaAvisos = new System.Windows.Forms.DataGridView();
+            this.tablaMultiUso = new System.Windows.Forms.DataGridView();
+            this.cmdCumples = new System.Windows.Forms.Button();
+            this.cmdAvisos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.peluqueriaDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaCumpleaños)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaAvisos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaMultiUso)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHora
@@ -69,25 +71,80 @@
             this.HoraFecha.Enabled = true;
             this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
             // 
-            // tablaCumpleaños
+            // tablaMultiUso
             // 
-            this.tablaCumpleaños.AllowUserToAddRows = false;
-            this.tablaCumpleaños.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaCumpleaños.Location = new System.Drawing.Point(18, 189);
-            this.tablaCumpleaños.Name = "tablaCumpleaños";
-            this.tablaCumpleaños.ReadOnly = true;
-            this.tablaCumpleaños.Size = new System.Drawing.Size(240, 150);
-            this.tablaCumpleaños.TabIndex = 2;
+            this.tablaMultiUso.AllowUserToAddRows = false;
+            this.tablaMultiUso.AllowUserToDeleteRows = false;
+            this.tablaMultiUso.AllowUserToOrderColumns = true;
+            this.tablaMultiUso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablaMultiUso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaMultiUso.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaMultiUso.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaMultiUso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaMultiUso.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaMultiUso.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaMultiUso.Location = new System.Drawing.Point(186, 186);
+            this.tablaMultiUso.Name = "tablaMultiUso";
+            this.tablaMultiUso.ReadOnly = true;
+            this.tablaMultiUso.RowHeadersVisible = false;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkRed;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DarkRed;
+            this.tablaMultiUso.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tablaMultiUso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaMultiUso.Size = new System.Drawing.Size(412, 228);
+            this.tablaMultiUso.TabIndex = 2;
             // 
-            // tablaAvisos
+            // cmdCumples
             // 
-            this.tablaAvisos.AllowUserToAddRows = false;
-            this.tablaAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaAvisos.Location = new System.Drawing.Point(374, 189);
-            this.tablaAvisos.Name = "tablaAvisos";
-            this.tablaAvisos.ReadOnly = true;
-            this.tablaAvisos.Size = new System.Drawing.Size(240, 150);
-            this.tablaAvisos.TabIndex = 3;
+            this.cmdCumples.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdCumples.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cmdCumples.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdCumples.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdCumples.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdCumples.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdCumples.ForeColor = System.Drawing.Color.DarkRed;
+            this.cmdCumples.Location = new System.Drawing.Point(186, 157);
+            this.cmdCumples.Name = "cmdCumples";
+            this.cmdCumples.Size = new System.Drawing.Size(111, 23);
+            this.cmdCumples.TabIndex = 3;
+            this.cmdCumples.Text = "Cumpleaños HOY";
+            this.cmdCumples.UseVisualStyleBackColor = true;
+            this.cmdCumples.Click += new System.EventHandler(this.cmdCumples_Click);
+            // 
+            // cmdAvisos
+            // 
+            this.cmdAvisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdAvisos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdAvisos.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdAvisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdAvisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdAvisos.ForeColor = System.Drawing.Color.DarkRed;
+            this.cmdAvisos.Location = new System.Drawing.Point(303, 157);
+            this.cmdAvisos.Name = "cmdAvisos";
+            this.cmdAvisos.Size = new System.Drawing.Size(111, 23);
+            this.cmdAvisos.TabIndex = 5;
+            this.cmdAvisos.Text = "Deben volver HOY";
+            this.cmdAvisos.UseVisualStyleBackColor = true;
+            this.cmdAvisos.Click += new System.EventHandler(this.cmdAvisos_Click);
             // 
             // frmInicio
             // 
@@ -95,8 +152,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tablaAvisos);
-            this.Controls.Add(this.tablaCumpleaños);
+            this.Controls.Add(this.cmdAvisos);
+            this.Controls.Add(this.cmdCumples);
+            this.Controls.Add(this.tablaMultiUso);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblHora);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -104,8 +162,7 @@
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.peluqueriaDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaCumpleaños)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaAvisos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaMultiUso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +174,8 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Timer HoraFecha;
         private System.Windows.Forms.BindingSource peluqueriaDataSetBindingSource;
-        private System.Windows.Forms.DataGridView tablaCumpleaños;
-        private System.Windows.Forms.DataGridView tablaAvisos;
+        private System.Windows.Forms.DataGridView tablaMultiUso;
+        private System.Windows.Forms.Button cmdCumples;
+        private System.Windows.Forms.Button cmdAvisos;
     }
 }

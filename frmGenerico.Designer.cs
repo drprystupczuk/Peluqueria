@@ -35,6 +35,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pnlMenuVertical = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCargarTrat = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,18 +48,15 @@
             this.btnCargar = new System.Windows.Forms.Button();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCargarTrat = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.pnlMenuVertical.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraTitulo
@@ -121,6 +121,40 @@
             this.pnlMenuVertical.Name = "pnlMenuVertical";
             this.pnlMenuVertical.Size = new System.Drawing.Size(151, 424);
             this.pnlMenuVertical.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkRed;
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Location = new System.Drawing.Point(1, 137);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 23);
+            this.panel5.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DimGray;
+            this.panel6.Location = new System.Drawing.Point(-76, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 23);
+            this.panel6.TabIndex = 2;
+            // 
+            // btnCargarTrat
+            // 
+            this.btnCargarTrat.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCargarTrat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarTrat.FlatAppearance.BorderSize = 0;
+            this.btnCargarTrat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btnCargarTrat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarTrat.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarTrat.Image")));
+            this.btnCargarTrat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargarTrat.Location = new System.Drawing.Point(3, 137);
+            this.btnCargarTrat.Name = "btnCargarTrat";
+            this.btnCargarTrat.Size = new System.Drawing.Size(153, 23);
+            this.btnCargarTrat.TabIndex = 7;
+            this.btnCargarTrat.Text = "Tratamientos";
+            this.btnCargarTrat.UseVisualStyleBackColor = false;
+            this.btnCargarTrat.Click += new System.EventHandler(this.btnCargarTrat_Click);
             // 
             // pictureBox2
             // 
@@ -206,7 +240,7 @@
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(153, 23);
             this.btnCargar.TabIndex = 1;
-            this.btnCargar.Text = "Cargar clienta";
+            this.btnCargar.Text = "Clientas";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
@@ -223,40 +257,6 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            // 
-            // btnCargarTrat
-            // 
-            this.btnCargarTrat.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCargarTrat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCargarTrat.FlatAppearance.BorderSize = 0;
-            this.btnCargarTrat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnCargarTrat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarTrat.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarTrat.Image")));
-            this.btnCargarTrat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargarTrat.Location = new System.Drawing.Point(3, 137);
-            this.btnCargarTrat.Name = "btnCargarTrat";
-            this.btnCargarTrat.Size = new System.Drawing.Size(153, 23);
-            this.btnCargarTrat.TabIndex = 7;
-            this.btnCargarTrat.Text = "Cargar tratamiento";
-            this.btnCargarTrat.UseVisualStyleBackColor = false;
-            this.btnCargarTrat.Click += new System.EventHandler(this.btnCargarTrat_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DarkRed;
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(1, 137);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 23);
-            this.panel5.TabIndex = 3;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DimGray;
-            this.panel6.Location = new System.Drawing.Point(-76, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 23);
-            this.panel6.TabIndex = 2;
             // 
             // frmGenerico
             // 
@@ -275,11 +275,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.pnlMenuVertical.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
