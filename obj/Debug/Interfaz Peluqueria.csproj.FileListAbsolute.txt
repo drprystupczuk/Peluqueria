@@ -36,3 +36,6 @@ F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 
 F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.CoreCompileInputs.cache
 F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.exe
 F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.4 (consultas)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.pdb
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.5 (cumple-avisos-dni)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csprojAssemblyReference.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.5 (cumple-avisos-dni)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V0.5 (cumple-avisos-dni)\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.pdb
