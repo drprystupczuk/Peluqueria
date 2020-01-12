@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace pryPeluquería.Properties
+namespace Interfaz_Peluqueria.Properties
 {
 
 
