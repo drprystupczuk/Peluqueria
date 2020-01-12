@@ -1,0 +1,11 @@
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\bin\Debug\pryPeluquería.exe.config
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\bin\Debug\pryPeluquería.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\bin\Debug\pryPeluquería.pdb
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.csprojAssemblyReference.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.frmCarga.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.frmInicio.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.Properties.Resources.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.csproj.GenerateResource.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.csproj.CoreCompileInputs.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería\obj\Debug\pryPeluquería.pdb
