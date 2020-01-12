@@ -78,6 +78,7 @@
     <Compile Include="Forms\frmCargarCliente.Designer.cs">
       <DependentUpon>frmCargarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Aviso.cs" />
     <Compile Include="Modelos\Cliente.cs" />
     <Compile Include="Forms\frmGenerico.cs">
       <SubType>Form</SubType>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaz_Peluqueria.Modelos;
+using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
@@ -85,8 +86,8 @@ namespace Interfaz_Peluqueria
         {
             try
             {
-                comando.CommandText = "Insert into Avisos(Documento,fecha_aviso)" +"values(" + doc + ",'" + fec_tra + "')";
-                comando.ExecuteNonQuery(); //para que se realice la sentencia sql
+                comando.CommandText = $"INSERT INTO {Aviso.NOMBRE_TABLA} (Documento,fecha_aviso) VALUES ({doc},'{fec_tra}')";
+                comando.ExecuteNonQuery();
                 return "Se cargó un aviso para la fecha: "+fec_tra;
 
             }
@@ -103,7 +104,7 @@ namespace Interfaz_Peluqueria
                 switch (tabla)
                 {
                     case "avisos":
-                        comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes,  correo_cliente as Correo, tel_cliente as Teléfono, fecha_aviso as 'Debe volver el día:' FROM {Cliente.NOMBRE_TABLA} c, Avisos a where (c.documento = a.documento) and (day(fecha_aviso) = DAY(date()))";
+                        comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes,  correo_cliente as Correo, tel_cliente as Teléfono, fecha_aviso as 'Debe volver el día:' FROM {Cliente.NOMBRE_TABLA} c, {Aviso.NOMBRE_TABLA} a WHERE (c.documento = a.documento) and (day(fecha_aviso) = DAY(date()))";
                         break;
                     case Cliente.NOMBRE_TABLA:
                         comando.CommandText = $"SELECT documento as DNI, nom_cliente+' '+ape_cliente as Clientes,direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA}";
@@ -112,15 +113,14 @@ namespace Interfaz_Peluqueria
                         comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes, Fecha, Observaciones,Tratamiento,Color, Productos FROM {Cliente.NOMBRE_TABLA} C,{Transaccion.NOMBRE_TABLA} T WHERE (c.documento = t.documento) order by fecha desc";
                         break;
                     case "cumpleaños":
-                        comando.CommandText = $"SELECT nom_cliente + ' ' + ape_cliente as Clientes, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA} where (day(fec_nac_C) = DAY(date())) and (MONTH(fec_nac_C) = MONTH(DATE()))";
+                        comando.CommandText = $"SELECT nom_cliente + ' ' + ape_cliente as Clientes, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA} WHERE (day(fec_nac_C) = DAY(date())) and (MONTH(fec_nac_C) = MONTH(DATE()))";
                         break;
 					case "cumpleañosManana":
-						comando.CommandText = $"SELECT nom_cliente + ' ' + ape_cliente as Clientes, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA} where (day(fec_nac_C) = DAY(date())+1) and (MONTH(fec_nac_C) = MONTH(DATE()))";
+						comando.CommandText = $"SELECT nom_cliente + ' ' + ape_cliente as Clientes, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA} WHERE (day(fec_nac_C) = DAY(date())+1) and (MONTH(fec_nac_C) = MONTH(DATE()))";
 						break;
 					case "avisosManana":
-						comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes,  correo_cliente as Correo, tel_cliente as Teléfono, fecha_aviso as 'Debe volver el día:' FROM {Cliente.NOMBRE_TABLA} c, Avisos a where (c.documento = a.documento) and (day(fecha_aviso) = DAY(date())+1)";
-						break;
-                   
+						comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes,  correo_cliente as Correo, tel_cliente as Teléfono, fecha_aviso as 'Debe volver el día:' FROM {Cliente.NOMBRE_TABLA} c, {Aviso.NOMBRE_TABLA} a WHERE (c.documento = a.documento) and (day(fecha_aviso) = DAY(date())+1)";
+						break;                   
                     default:
                         break;
                 }
@@ -138,9 +138,9 @@ namespace Interfaz_Peluqueria
         {
             if (PersonaRegistrada(dni))
             {
-                comando.CommandText = "Select nom_cliente+' '+ape_cliente as Clientes, Fecha, Observaciones,Tratamiento,Color, Productos from Clientes c,Transacciones t where (c.documento = t.documento) and "+dni+" = t.documento order by fecha desc";
+                comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes, Fecha, Observaciones, Tratamiento, Color, Productos FROM {Cliente.NOMBRE_TABLA} c, {Transaccion.NOMBRE_TABLA} t WHERE (c.documento = t.documento) and "+dni+" = t.documento ORDER BY fecha desc";
                 dtabla = new DataTable();
-                dtabla.Load(comando.ExecuteReader()); //CARGO LA TABLA leyendo la consulta anterior                
+                dtabla.Load(comando.ExecuteReader());
                 dgv.DataSource = dtabla;
             }
             else            
@@ -177,8 +177,7 @@ namespace Interfaz_Peluqueria
                     txtDireccion.Text = dr.GetString(3);
                     cumple.Value = dr.GetDateTime(4);
                     txtCorreo.Text = dr.GetString(5);
-                    txtTelefono.Text = dr.GetString(6);
-                    
+                    txtTelefono.Text = dr.GetString(6);                    
                 }
                 dr.Close();
             }

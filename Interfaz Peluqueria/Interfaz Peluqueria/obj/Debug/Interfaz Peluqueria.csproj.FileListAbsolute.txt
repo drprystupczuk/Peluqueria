@@ -155,3 +155,19 @@ C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Inte
 C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\System.ValueTuple.dll
 C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\System.ValueTuple.xml
 C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.CopyComplete
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\Interfaz Peluqueria.exe.config
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\Interfaz Peluqueria.exe
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\Interfaz Peluqueria.pdb
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\System.ValueTuple.dll
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\bin\Debug\System.ValueTuple.xml
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csprojAssemblyReference.cache
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmCargarConsulta.resources
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmCargarCliente.resources
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmGenerico.resources
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.frmInicio.resources
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz_Peluqueria.Properties.Resources.resources
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.GenerateResource.cache
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.CoreCompileInputs.cache
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.csproj.CopyComplete
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.exe
+C:\WC\pryPeluqueria\Interfaz Peluqueria\Interfaz Peluqueria\obj\Debug\Interfaz Peluqueria.pdb
