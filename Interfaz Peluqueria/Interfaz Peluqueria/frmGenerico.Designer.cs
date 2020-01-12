@@ -78,9 +78,9 @@
             this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(3, 5);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(155, 16);
+            this.lblNombre.Size = new System.Drawing.Size(79, 16);
             this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Peluqueria \'NOMBRE\'";
+            this.lblNombre.Text = "Peluqueria ";
             // 
             // pictureBox1
             // 

@@ -17,6 +17,8 @@ namespace Interfaz_Peluqueria
         {
             c = new Conexion();
             InitializeComponent();
+            cmdCumples.BackColor = Color.DarkRed;
+            cmdAvisos.BackColor = Color.Transparent;
         }
 
         private void HoraFecha_Tick(object sender, EventArgs e)
@@ -37,11 +39,15 @@ namespace Interfaz_Peluqueria
         private void cmdCumples_Click(object sender, EventArgs e)
         {
             c.cargarTabla(tablaMultiUso, "cumpleaños");
+            cmdCumples.BackColor = Color.DarkRed;
+            cmdAvisos.BackColor = Color.Transparent;
         }
 
         private void cmdAvisos_Click(object sender, EventArgs e)
         {
             c.cargarTabla(tablaMultiUso, "avisos");
+            cmdAvisos.BackColor = Color.DarkRed;
+            cmdCumples.BackColor = Color.Transparent;
         }
     }
 }

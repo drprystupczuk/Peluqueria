@@ -17,6 +17,7 @@ namespace Interfaz_Peluqueria
         string productos;
         string observaciones;
         DateTime fecTransaccion;
+        
 
 
         //Constructor de la clase
@@ -28,6 +29,7 @@ namespace Interfaz_Peluqueria
             productos = "";
             observaciones = "";
             fecTransaccion = DateTime.Today;
+            
         }
 
         //Public SET//GET//
@@ -65,6 +67,9 @@ namespace Interfaz_Peluqueria
             set { fecTransaccion = value; }
             get { return fecTransaccion; }
         }
+
+        
+
 
     }
 }

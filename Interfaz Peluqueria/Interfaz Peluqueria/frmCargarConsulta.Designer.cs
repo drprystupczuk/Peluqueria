@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
             this.lblTratamiento = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.cmbClientas = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tablaMultiUso = new System.Windows.Forms.DataGridView();
+            this.cbDebeVolver = new System.Windows.Forms.CheckBox();
+            this.dtpDebeVolver = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMultiUso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +134,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(137, 223);
+            this.btnRegistrar.Location = new System.Drawing.Point(137, 262);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(87, 23);
             this.btnRegistrar.TabIndex = 5;
@@ -166,35 +168,35 @@
             this.tablaMultiUso.AllowUserToAddRows = false;
             this.tablaMultiUso.AllowUserToDeleteRows = false;
             this.tablaMultiUso.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tablaMultiUso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tablaMultiUso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaMultiUso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaMultiUso.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tablaMultiUso.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.tablaMultiUso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaMultiUso.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaMultiUso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaMultiUso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablaMultiUso.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaMultiUso.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tablaMultiUso.Location = new System.Drawing.Point(34, 252);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaMultiUso.DefaultCellStyle = dataGridViewCellStyle6;
+            this.tablaMultiUso.Location = new System.Drawing.Point(34, 300);
             this.tablaMultiUso.Name = "tablaMultiUso";
             this.tablaMultiUso.ReadOnly = true;
             this.tablaMultiUso.RowHeadersVisible = false;
@@ -206,8 +208,34 @@
             this.tablaMultiUso.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.tablaMultiUso.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tablaMultiUso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaMultiUso.Size = new System.Drawing.Size(468, 134);
+            this.tablaMultiUso.Size = new System.Drawing.Size(546, 134);
             this.tablaMultiUso.TabIndex = 23;
+            // 
+            // cbDebeVolver
+            // 
+            this.cbDebeVolver.AutoSize = true;
+            this.cbDebeVolver.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.cbDebeVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbDebeVolver.Location = new System.Drawing.Point(137, 219);
+            this.cbDebeVolver.Name = "cbDebeVolver";
+            this.cbDebeVolver.Size = new System.Drawing.Size(95, 17);
+            this.cbDebeVolver.TabIndex = 25;
+            this.cbDebeVolver.TabStop = false;
+            this.cbDebeVolver.Text = "Debe volver";
+            this.cbDebeVolver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbDebeVolver.UseVisualStyleBackColor = true;
+            this.cbDebeVolver.CheckedChanged += new System.EventHandler(this.cbDebeVolver_CheckedChanged_1);
+            // 
+            // dtpDebeVolver
+            // 
+            this.dtpDebeVolver.Enabled = false;
+            this.dtpDebeVolver.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDebeVolver.Location = new System.Drawing.Point(262, 216);
+            this.dtpDebeVolver.MinDate = new System.DateTime(2018, 10, 1, 23, 20, 3, 0);
+            this.dtpDebeVolver.Name = "dtpDebeVolver";
+            this.dtpDebeVolver.Size = new System.Drawing.Size(93, 20);
+            this.dtpDebeVolver.TabIndex = 26;
+            this.dtpDebeVolver.Value = new System.DateTime(2018, 10, 1, 23, 20, 3, 0);
             // 
             // frmCargarConsulta
             // 
@@ -215,6 +243,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(677, 464);
+            this.Controls.Add(this.dtpDebeVolver);
+            this.Controls.Add(this.cbDebeVolver);
             this.Controls.Add(this.tablaMultiUso);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbClientas);
@@ -255,5 +285,7 @@
         private System.Windows.Forms.ComboBox cmbClientas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView tablaMultiUso;
+        private System.Windows.Forms.CheckBox cbDebeVolver;
+        private System.Windows.Forms.DateTimePicker dtpDebeVolver;
     }
 }

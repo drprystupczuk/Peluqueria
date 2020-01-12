@@ -13,6 +13,7 @@ namespace Interfaz_Peluqueria
     public partial class frmCargarCliente : Form
     {
         Conexion con = new Conexion();
+        Cliente c = new Cliente();
         public frmCargarCliente()
         {
             InitializeComponent();
@@ -21,8 +22,8 @@ namespace Interfaz_Peluqueria
         private void Cargar_Load(object sender, EventArgs e)
         {
             con.cargarTabla(tablaMultiUso, "clientes");
-
-            manejoForm(false);
+            ManejoForm(true);
+            
         }
 
         private void lblObservaciones_Click(object sender, EventArgs e)
@@ -30,6 +31,16 @@ namespace Interfaz_Peluqueria
 
         }
 
+        private void ManejoForm(bool a)
+        {
+            cmdModificar.Enabled = !a;
+            cmdEliminar.Enabled = !a;
+            btnRegistrar.Enabled = a;
+
+            cmdModificar.Visible = !a;
+            cmdEliminar.Visible = !a;
+            btnRegistrar.Visible = a;
+        }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
@@ -37,9 +48,6 @@ namespace Interfaz_Peluqueria
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Cliente c = new Cliente();
-
-
             try
             {
                 if (Validacion())
@@ -75,6 +83,9 @@ namespace Interfaz_Peluqueria
             txtTelefono.Text = "";
             dtpFechaCumple.Value = DateTime.Now;
             txtDocumento.Text = "";
+            txtBuscarDNI.Text = "";
+            txtBuscarDNI.Enabled = true;
+            ManejoForm(true);
 
         }
         private bool Validacion()
@@ -240,26 +251,48 @@ namespace Interfaz_Peluqueria
 
         private void cmdModificar_Click(object sender, EventArgs e)
         {
-            manejoForm(true);
-        }
+            try
+            {
+                c.pNombre = txtName.Text;
+                c.pApellido = txtApellido.Text;
+                c.pDireccion = txtDireccion.Text;
+                c.pFecNacimiento = dtpFechaCumple.Value;
+                c.pCorreo = txtCorreo.Text;
+                c.pTelefono = txtTelefono.Text;
+                c.pDocumento = Convert.ToInt32(txtDocumento.Text);
 
-        private void manejoForm(bool ac)
-        {
-            gpbModBor.Visible = ac;
-            gpbModBor.Enabled = ac;
+                MessageBox.Show(con.ModificarCliente(Convert.ToInt32(txtBuscarDNI.Text),c.pDocumento, c.pNombre, c.pApellido, c.pDireccion, c.pFecNacimiento, c.pCorreo, c.pTelefono));
+               
+                con.cargarTabla(tablaMultiUso, "clientes");
+                Limpiar();
 
+            }
+            catch (Exception ex)
+            {
 
-            btnRegistrar.Enabled = !ac;
+                MessageBox.Show(ex.ToString(), "No se pudo modificar");
+            }
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            manejoForm(true);
+            try
+            {
+                MessageBox.Show(con.EliminarCliente(Convert.ToInt32(txtBuscarDNI.Text)));
+                con.cargarTabla(tablaMultiUso, "clientes");
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "No se pudo eliminar");
+            }
         }
 
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
-            manejoForm(false);
+            Limpiar();
+            ManejoForm(true);
         }
 
         private void cmdBuscar_Click(object sender, EventArgs e)
@@ -267,12 +300,14 @@ namespace Interfaz_Peluqueria
             try
             {
                 con.cargarTextBox(Convert.ToInt32(txtBuscarDNI.Text), txtName, txtApellido, txtDireccion, txtCorreo, txtTelefono, dtpFechaCumple, txtDocumento);
+                ManejoForm(false);
+                txtBuscarDNI.Enabled = false;
 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString(), "Error al buscar la clienta");
+                MessageBox.Show(ex.ToString(), "No se encontró una clienta que corresponda con el D.N.I");
             }
         }
 

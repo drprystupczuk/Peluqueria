@@ -39,15 +39,37 @@ namespace Interfaz_Peluqueria
             {
                 if (Validacion())
                 {
-                    c.pDocumento = Convert.ToInt32(cmbClientas.ValueMember);
+                    c = con.cargarClase(Convert.ToInt32(cmbClientas.SelectedValue));
                     t.cCli = c;
                     t.pColor = txtColor.Text;
                     t.pTratamiento = txtTratamiento.Text;
                     t.pProductos = txtProductos.Text;
-                    t.pObservaciones = txtObservaciones.Text;
-                    t.pFecTransaccion = DateTime.Now;
+                    t.pObservaciones = txtObservaciones.Text;   
+                    t.pFecTransaccion = DateTime.Today;
 
-                    MessageBox.Show(con.InsertarConsulta(Convert.ToInt32(t.cCli.pDocumento), t.pFecTransaccion, t.pObservaciones, t.pTratamiento, t.pColor, t.pProductos));
+                    MessageBox.Show(con.InsertarConsulta(t.cCli.pDocumento, t.pFecTransaccion, t.pObservaciones, t.pTratamiento, t.pColor, t.pProductos));
+
+                    if (cbDebeVolver.Checked) //Si debe volver
+                    {
+                        dtpDebeVolver.MinDate = DateTime.Today;
+                        if (dtpDebeVolver.Value > DateTime.Today)//Y la fecha es despues de hoy
+                        {
+                            try
+                            {
+                                MessageBox.Show(con.InsertarAvisos(Convert.ToInt32(t.cCli.pDocumento), t.pFecTransaccion));
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show(ex.Message.ToString(), "Error al cargar los datos");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La fecha debe ser posterior al día de del tratamiento realizado");
+                        }
+                        
+                    }
                     Limpiar();
                 }
             }
@@ -64,7 +86,9 @@ namespace Interfaz_Peluqueria
             txtObservaciones.Text = "";
             txtProductos.Text = "";
             txtTratamiento.Text ="";
-            
+            cbDebeVolver.Checked = false;
+            dtpDebeVolver.Value = DateTime.Now;
+            con.cargarTabla(tablaMultiUso, "transacciones");
         }
         private bool Validacion()
         {
@@ -95,6 +119,25 @@ namespace Interfaz_Peluqueria
 
         private void cmbClientas_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void cbDebeVolver_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDebeVolver_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (cbDebeVolver.Checked == true)
+            {
+                dtpDebeVolver.Enabled = true;
+            }
+
+            if (cbDebeVolver.Checked == false)
+            {
+                dtpDebeVolver.Enabled = false;
+            }
 
         }
     }

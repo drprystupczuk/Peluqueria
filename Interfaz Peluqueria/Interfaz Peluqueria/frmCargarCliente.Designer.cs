@@ -95,9 +95,10 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(92, 254);
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistrar.Location = new System.Drawing.Point(71, 254);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(96, 23);
             this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Text = "Cargar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -229,9 +230,10 @@
             // 
             // cmdModificar
             // 
-            this.cmdModificar.Location = new System.Drawing.Point(384, 67);
+            this.cmdModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdModificar.Location = new System.Drawing.Point(173, 254);
             this.cmdModificar.Name = "cmdModificar";
-            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
+            this.cmdModificar.Size = new System.Drawing.Size(96, 23);
             this.cmdModificar.TabIndex = 8;
             this.cmdModificar.Text = "Modificar";
             this.cmdModificar.UseVisualStyleBackColor = true;
@@ -239,9 +241,10 @@
             // 
             // cmdEliminar
             // 
-            this.cmdEliminar.Location = new System.Drawing.Point(465, 67);
+            this.cmdEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdEliminar.Location = new System.Drawing.Point(275, 254);
             this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
+            this.cmdEliminar.Size = new System.Drawing.Size(96, 23);
             this.cmdEliminar.TabIndex = 9;
             this.cmdEliminar.Text = "Borrar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
@@ -269,7 +272,7 @@
             this.gpbModBor.Controls.Add(this.cmdCancelar);
             this.gpbModBor.Controls.Add(this.cmdBuscar);
             this.gpbModBor.Controls.Add(this.txtBuscarDNI);
-            this.gpbModBor.Location = new System.Drawing.Point(384, 112);
+            this.gpbModBor.Location = new System.Drawing.Point(384, 67);
             this.gpbModBor.Name = "gpbModBor";
             this.gpbModBor.Size = new System.Drawing.Size(212, 123);
             this.gpbModBor.TabIndex = 26;
@@ -310,9 +313,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(380, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(156, 20);
+            this.label7.Size = new System.Drawing.Size(214, 20);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Clientas Cargadas";
+            this.label7.Text = "Modificar datos o eliminar";
             // 
             // frmCargarCliente
             // 
