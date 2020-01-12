@@ -1,0 +1,26 @@
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Release\Interfaz Peluqueria.exe.config
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Release\Interfaz Peluqueria.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Release\Interfaz Peluqueria.pdb
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.csprojAssemblyReference.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmCargarConsulta.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmCargarCliente.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmGenerico.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmInicio.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.Properties.Resources.resources
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.csproj.GenerateResource.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.csproj.CoreCompileInputs.cache
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.exe
+F:\Users\diegoprystu\PROYECTOS\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.pdb
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Release\Interfaz Peluqueria.exe.config
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Release\Interfaz Peluqueria.exe
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\bin\Release\Interfaz Peluqueria.pdb
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.csprojAssemblyReference.cache
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmCargarConsulta.resources
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmCargarCliente.resources
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmGenerico.resources
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.frmInicio.resources
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz_Peluqueria.Properties.Resources.resources
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.csproj.GenerateResource.cache
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.csproj.CoreCompileInputs.cache
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.exe
+C:\Users\diego\OneDrive\WC\Visual Studio\pryPeluquería\pryPeluquería V1.5\Interfaz Peluqueria\Interfaz Peluqueria\obj\Release\Interfaz Peluqueria.pdb

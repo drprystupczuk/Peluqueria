@@ -1,4 +1,0 @@
-Se pueden eliminar, y modificar clientes
-No es necesario cambiar la ruta de la base de dato dependiendo la pc
-Mejoras en la interfaz 
-Mejora en el cuidado de la integridad de los datos

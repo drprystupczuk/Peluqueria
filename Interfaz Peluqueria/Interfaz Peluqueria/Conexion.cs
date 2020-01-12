@@ -1,89 +1,83 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.OleDb;        //Bases de datos en general
-using System.Windows.Forms;     //para poder usar el message box dentro de la clase
+using System.Data.OleDb;
+using System.Windows.Forms;
 
 
 namespace Interfaz_Peluqueria
 {
     class Conexion
     {
-        OleDbConnection conexion;   //conexion
-        OleDbCommand comando;       //consulta sql
-        OleDbDataAdapter da;
+        OleDbConnection conexion;   
+        OleDbCommand comando;
         OleDbDataReader dr;
-        
+        DataTable dtabla;        
 
-
-        DataTable dtabla;
-        DataColumn dc;
-
-        string RutaBD;
-
+        string rutaBD;
+        bool conectado;
 
         public Conexion()
         {
             try
             {
-                RutaBD = Application.StartupPath + "/Peluqueria.mdb";
-                conexion = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+RutaBD);
+                rutaBD = Application.StartupPath + "/Peluqueria.accdb";
+                conexion = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + rutaBD);
                 conexion.Open();
-                //MessageBox.Show("Entraste a la base");
-
+                conectado = true;
+                comando = new OleDbCommand();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al ingresar al servidor: " + ex.ToString());
-
+                MessageBox.Show("Error al ingresar al servidor: " + ex.Message.ToString());
             }
-
         }
 
-        #region Insertar en la BD
-        public string InsertarConsulta(int doc, DateTime fec_tra, string obs, string trat, string col, string prod)
+        public void CloseConexion()
         {
             try
             {
-                comando = new OleDbCommand
-                    ("Insert into Transacciones(documento,fecha,observaciones,tratamiento,color,productos)" +
-                    "values(" + doc + ",'" + fec_tra + "','" + obs + "','" + trat + "','" + col + "','" + prod + "')", conexion
-                    );
-
-                comando.ExecuteNonQuery(); //para que se realice la sentencia sql
+                if (conectado)
+                {
+                    conexion.Close();
+                    conectado = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cierre de base de datos: " +ex.Message.ToString());
+            }
+        }
+        public string InsertarConsulta(int documento, DateTime fechaTransaccion, string observaciones, string tratamiento, string color, string productos)
+        {
+            try
+            {
+                comando.CommandText = $"INSERT INTO {Transaccion.NOMBRE_TABLA} (documento,fecha,observaciones,tratamiento,color,productos) " +
+                                        $"VALUES ({ documento}, '{fechaTransaccion}','{observaciones}','{tratamiento}','{color}','{productos}')";
+                comando.ExecuteNonQuery();
                 return "Se cargó correctamente";
                 
             }
-
             catch (Exception ex)
             {
-
-                return "Problemas al registrar la consulta: " + ex.ToString();
+                return "Problemas al registrar la consulta: " + ex.Message.ToString();
             }
         }
 
-        public string InsertarClienta(int doc, string nom, string ape, string dir, DateTime feconexionac, string correo, string tel)
+        public string InsertarCliente(int documento, string nombreCliente, string apellidoCliente, string direccion, DateTime fechaNacimiento, string correo, string telefono)
         {
             try
             {
-                comando = new OleDbCommand
-                    (
-                    "Insert into Clientes(documento,nom_cliente,ape_cliente,direccion,fec_nac_C,correo_cliente,tel_cliente)" +
-                    "values('" + doc + "','" + nom + "','" + ape + "','" + dir + "','" + feconexionac + "','" + correo + "','" + tel + "')", conexion
-                    );
+                comando.CommandText= $"INSERT INTO {Cliente.NOMBRE_TABLA} (documento,nom_cliente,ape_cliente,direccion,fec_nac_C,correo_cliente,tel_cliente)" +
+                                       $"VALUES({documento},'{nombreCliente}','{apellidoCliente}','{direccion}','{fechaNacimiento}','{correo}','{telefono}')";
                 comando.ExecuteNonQuery();
-                return "Se registró la cliente correctamente";
-            }
 
+                return "Se registró el cliente correctamente";
+            }
             catch (Exception ex)
             {
-
-                return "Problemas al registrar la clienta: " + ex.Message.ToString();
+                return "Problemas al registrar el cliente: " + ex.Message.ToString();
             }
         }
 
@@ -91,151 +85,139 @@ namespace Interfaz_Peluqueria
         {
             try
             {
-                comando = new OleDbCommand
-                    ("Insert into Avisos(Documento,fecha_aviso)" +
-                    "values(" + doc + ",'" + fec_tra + "')", conexion
-                    );
-
+                comando.CommandText = "Insert into Avisos(Documento,fecha_aviso)" +"values(" + doc + ",'" + fec_tra + "')";
                 comando.ExecuteNonQuery(); //para que se realice la sentencia sql
                 return "Se cargó un aviso para la fecha: "+fec_tra;
 
             }
-
             catch (Exception ex)
             {
-
-                return "Problemas al cargar: " + ex.ToString();
+                return "Problemas al cargar: " + ex.Message.ToString();
             }
         }
 
-        #endregion
-
-        #region traer valores al programa
-        public void cargarTabla(DataGridView dgv, string tabla)
+        public void CargarTabla(DataGridView dgv, string tabla)
         {
-            comando = new OleDbCommand();
-            comando.Connection = conexion;
             try
             {
-                comando.CommandType = CommandType.Text; //EL COMANDO SQL ES TEXTUAL 
                 switch (tabla)
                 {
                     case "avisos":
-                        comando.CommandText = "select nom_cliente+' '+ape_cliente as Clientas, correo_cliente as Correo,tel_cliente as Teléfono, fecha_aviso as 'Debe volver' from Clientes c, Avisos a where c.documento = a.documento";
+                        comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes,  correo_cliente as Correo, tel_cliente as Teléfono, fecha_aviso as 'Debe volver el día:' FROM {Cliente.NOMBRE_TABLA} c, Avisos a where (c.documento = a.documento) and (day(fecha_aviso) = DAY(date()))";
                         break;
-                    case "clientes":
-                        comando.CommandText = "SELECT documento as DNI, nom_cliente+' '+ape_cliente as Clientas,direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono from clientes";
+                    case Cliente.NOMBRE_TABLA:
+                        comando.CommandText = $"SELECT documento as DNI, nom_cliente+' '+ape_cliente as Clientes,direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA}";
                         break;
-                    case "transacciones":
-                        comando.CommandText = "Select nom_cliente+' '+ape_cliente as Clientas, Fecha, Observaciones,Tratamiento,Color, Productos from Clientes c,Transacciones t where (c.documento = t.documento)";
+                    case Transaccion.NOMBRE_TABLA:
+                        comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes, Fecha, Observaciones,Tratamiento,Color, Productos FROM {Cliente.NOMBRE_TABLA} C,{Transaccion.NOMBRE_TABLA} T WHERE (c.documento = t.documento) order by fecha desc";
                         break;
                     case "cumpleaños":
-                        comando.CommandText = "Select nom_cliente + ' ' + ape_cliente as Clientas, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono from clientes where (day(fec_nac_C) = DAY(date())) and (MONTH(fec_nac_C) = MONTH(DATE()))";
+                        comando.CommandText = $"SELECT nom_cliente + ' ' + ape_cliente as Clientes, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA} where (day(fec_nac_C) = DAY(date())) and (MONTH(fec_nac_C) = MONTH(DATE()))";
                         break;
+					case "cumpleañosManana":
+						comando.CommandText = $"SELECT nom_cliente + ' ' + ape_cliente as Clientes, Direccion,fec_nac_C as Nacimiento,correo_cliente as Correo,tel_cliente as Teléfono FROM {Cliente.NOMBRE_TABLA} where (day(fec_nac_C) = DAY(date())+1) and (MONTH(fec_nac_C) = MONTH(DATE()))";
+						break;
+					case "avisosManana":
+						comando.CommandText = $"SELECT nom_cliente+' '+ape_cliente as Clientes,  correo_cliente as Correo, tel_cliente as Teléfono, fecha_aviso as 'Debe volver el día:' FROM {Cliente.NOMBRE_TABLA} c, Avisos a where (c.documento = a.documento) and (day(fecha_aviso) = DAY(date())+1)";
+						break;
+                   
                     default:
                         break;
                 }
 
                 dtabla = new DataTable();
-                dtabla.Load(comando.ExecuteReader()); //CARGO LA TABLA leyendo la consulta anterior                
-                dgv.DataSource = dtabla;               //se pasa a la grilla el datatable
+                dtabla.Load(comando.ExecuteReader());                 
+                dgv.DataSource = dtabla; 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pueden obtener los datos de la base de datos: " + ex.Message.ToString());
             }
         }
-        
-        public void cargarClientes(ComboBox combo, string nomTabla)
+        public void CargarTablaConParametros(DataGridView dgv,int dni)
         {
-            // METODO que hace la conexion y muestra los datos de la base de datos en un combo box
-            comando.Connection = conexion; //GENERAR la conexion
-            comando.CommandType = CommandType.Text; //EL COMANDO SQL ES TEXTUAL 
-            comando.CommandText = "select documento,nom_cliente+' '+ape_cliente+' - ('+str(documento)+')' from " + nomTabla; //COMANDO SQL de consulta 
-            dtabla = new DataTable(); //INSTANCIAR tabla para cargar
-            dtabla.Load(comando.ExecuteReader()); //CARGO LA TABLA leyendo la consulta anterior
-
-            combo.DataSource = dtabla; //CARGO el combo con la tabla 
-            combo.DisplayMember = dtabla.Columns[1].ColumnName.ToString(); // DISPLAY Lo visualiza
-            combo.ValueMember = dtabla.Columns[0].ColumnName; // VALUE lo relaciona con los id
-  
-        }
-        
-        public void cargarTextBox(int doc,TextBox nom, TextBox ape, TextBox dire, TextBox correo, TextBox telefono, DateTimePicker cumple, TextBox txtdoc)
-        {
-
-            if (personaRegistrada(doc) != 0)
+            if (PersonaRegistrada(dni))
             {
-                comando.Connection = conexion; //GENERAR la conexion
-                comando.CommandType = CommandType.Text; //EL COMANDO SQL ES TEXTUAL 
-                comando.CommandText = "Select * from Clientes where documento = " + doc;
-                dr = comando.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    txtdoc.Text = Convert.ToString(dr.GetValue(0));
-                    nom.Text = dr.GetString(1);
-                    ape.Text = dr.GetString(2);
-                    dire.Text = dr.GetString(3);
-                    cumple.Value = dr.GetDateTime(4);
-                    correo.Text = dr.GetString(5);
-                    telefono.Text = dr.GetString(6);
-                    
-                }
-                
-                
-                
-                dr.Close();
+                comando.CommandText = "Select nom_cliente+' '+ape_cliente as Clientes, Fecha, Observaciones,Tratamiento,Color, Productos from Clientes c,Transacciones t where (c.documento = t.documento) and "+dni+" = t.documento order by fecha desc";
+                dtabla = new DataTable();
+                dtabla.Load(comando.ExecuteReader()); //CARGO LA TABLA leyendo la consulta anterior                
+                dgv.DataSource = dtabla;
             }
-            else
-            {
+            else            
                 MessageBox.Show("D.N.I no registrado");
-            }
             
         }
 
-        public Cliente cargarClase(int doc)
+        public void CargarClientes(ComboBox combo, string nombreTabla)
         {
-            Cliente c = new Cliente();
-            if (personaRegistrada(doc) != 0)
+            
+            comando.CommandText = "SELECT documento,nom_cliente+' '+ape_cliente+' - ('+str(documento)+')' FROM " + nombreTabla;
+
+            dtabla = new DataTable();
+            dtabla.Load(comando.ExecuteReader()); 
+
+            combo.DataSource = dtabla;
+            combo.DisplayMember = dtabla.Columns[1].ColumnName.ToString(); 
+            combo.ValueMember = dtabla.Columns[0].ColumnName;
+        }
+        
+        public void CargarTextBox(int documento,TextBox txtNombre, TextBox txtApellido, TextBox txtDireccion, TextBox txtCorreo, TextBox txtTelefono, DateTimePicker cumple, TextBox txtDocumento)
+        {
+
+            if (PersonaRegistrada(documento))
             {
-                comando.Connection = conexion; //GENERAR la conexion
-                comando.CommandType = CommandType.Text; //EL COMANDO SQL ES TEXTUAL 
-                comando.CommandText = "Select * from Clientes where documento = " + doc;
+                comando.CommandText = $"SELECT * FROM {Cliente.NOMBRE_TABLA} WHERE documento = {documento}";
                 dr = comando.ExecuteReader();
 
                 while (dr.Read())
                 {
-                    c.pDocumento = Convert.ToInt32(dr.GetValue(0));
-                    c.pNombre = dr.GetString(1);
-                    c.pApellido = dr.GetString(2);
-                    c.pDireccion = dr.GetString(3);
-                    c.pFecNacimiento = dr.GetDateTime(4);
-                    c.pCorreo = dr.GetString(5);
-                    c.pTelefono = dr.GetString(6);
+                    txtDocumento.Text = Convert.ToString(dr.GetValue(0));
+                    txtNombre.Text = dr.GetString(1);
+                    txtApellido.Text = dr.GetString(2);
+                    txtDireccion.Text = dr.GetString(3);
+                    cumple.Value = dr.GetDateTime(4);
+                    txtCorreo.Text = dr.GetString(5);
+                    txtTelefono.Text = dr.GetString(6);
+                    
+                }
+                dr.Close();
+            }
+            else            
+                MessageBox.Show("D.N.I no registrado");             
+        }
+
+        public Cliente CargarClase(int documento)
+        {
+            Cliente cliente = new Cliente();
+            if (PersonaRegistrada(documento))
+            {
+                comando.CommandText = "Select * from Clientes where documento = " + documento;
+                dr = comando.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cliente.pDocumento = Convert.ToInt32(dr.GetValue(0));
+                    cliente.pNombre = dr.GetString(1);
+                    cliente.pApellido = dr.GetString(2);
+                    cliente.pDireccion = dr.GetString(3);
+                    cliente.pFecNacimiento = dr.GetDateTime(4);
+                    cliente.pCorreo = dr.GetString(5);
+                    cliente.pTelefono = dr.GetString(6);
 
                 }
                 dr.Close();
             }
-            else
-            {
+            else            
                 MessageBox.Show("D.N.I no registrado");
-            }
-            return c;
+            
+            return cliente;
         }
 
-
-        #endregion
-
-        #region Modificaciones y Bajas
-
-        public string ModificarCliente(int viejodoc,int nuevodoc, string nom, string ape, string dir, DateTime feconexionac, string correo, string tel)
+        public string ModificarCliente(int viejoDoc,int nuevodoc, string nom, string ape, string dir, DateTime feconexionac, string correo, string tel)
         {
             try
             {
-                comando = new OleDbCommand
-                    ("Update clientes set nom_cliente = '"+nom+"', ape_cliente = '"+ape+"',Direccion = '"+dir+"',fec_nac_C = '"+feconexionac+"',correo_cliente = '"+correo+"',tel_cliente = '"+tel+"',documento = "+nuevodoc+" where documento = "+viejodoc, conexion
-                    );
+                comando.CommandText = "Update clientes set nom_cliente = '" + nom+"', ape_cliente = '"+ape+"',Direccion = '"+dir+"',fec_nac_C = '"+feconexionac+"',correo_cliente = '"+correo+"',tel_cliente = '"+tel+"',documento = "+nuevodoc+" where documento = "+viejoDoc;
 
                 comando.ExecuteNonQuery(); //para que se realice la sentencia sql
                 return "Se modificó el cliente de manera correcta";
@@ -244,60 +226,43 @@ namespace Interfaz_Peluqueria
 
             catch (Exception ex)
             {
-
-                return "Problemas al registrar la consulta: " + ex.ToString();
+                return "Problemas al registrar la consulta: " + ex.Message.ToString();
             }
         }
 
-        public string EliminarCliente(int doc)
+        public string EliminarCliente(int documento)
         {
             try
             {
-                comando = new OleDbCommand
-                    ("Delete from Clientes where documento ="+doc, conexion
-                    );
-
-                comando.ExecuteNonQuery(); //para que se realice la sentencia sql
+                comando.CommandText = $"DELETE FROM Clientes WHERE documento = {documento}";
+                comando.ExecuteNonQuery();
                 return "Se ha eliminado el cliente de la base de datos";
 
             }
-
             catch (Exception ex)
             {
-
-                return "Problemas al eliminar el cliente: " + ex.ToString();
+                return "Problemas al eliminar el cliente: " + ex.Message.ToString();
             }
         }
 
 
-
-        #endregion
-        #region validacion 
-        public int personaRegistrada(int doc)
+        public bool PersonaRegistrada(int documento)
         {
-            int contador = 0;
+            bool registrada = false;
             try
             {
-                comando.Connection = conexion; //GENERAR la conexion
-                comando.CommandType = CommandType.Text; //EL COMANDO SQL ES TEXTUAL 
-                comando.CommandText = "Select * from Clientes where documento = "+ doc;
+                comando.CommandText = $"SELECT * FROM  {Cliente.NOMBRE_TABLA} WHERE documento = {documento}";
                 dr = comando.ExecuteReader();
-                while (dr.Read())
-                {
-                    contador++;
-                }
+                if (dr.Read())
+                    registrada = true;
+                
                 dr.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message.ToString());
             }
-            return contador;
+            return registrada;
         }
-
-        #endregion
     }
 }
-
-
-
