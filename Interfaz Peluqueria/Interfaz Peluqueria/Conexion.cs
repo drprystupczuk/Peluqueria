@@ -9,6 +9,7 @@ namespace Interfaz_Peluqueria
 {
     class Conexion
     {
+        //github test
         OleDbConnection conexion;   
         OleDbCommand comando;
         OleDbDataReader dr;
