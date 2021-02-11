@@ -1,7 +1,7 @@
 # Peluqueria
 
 
-# [EN] Hairdressing Management
+# [ES] Manejo de Peluquería
 Unos de mis primeros proyectos en C# realizado para una peluquería. Puedes observar en el [video](https://youtu.be/venyxoI--KQ).
 
 ### Descripción: :rocket:
