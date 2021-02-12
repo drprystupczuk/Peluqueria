@@ -1,13 +1,10 @@
-# Peluqueria
-
-
 # [ES] Manejo de Peluquería
 Unos de mis primeros proyectos de escritorio en C#. 
 
-:movie_camera: Puedes observar el [video](https://youtu.be/venyxoI--KQ).
-
-### Descripción: :rocket:
+### Descripción :rocket:
 _Es un software simple para manejar los clientes de una peluquería._
+
+:movie_camera: Puedes observar el [video](https://youtu.be/venyxoI--KQ).
 
 ### Acerca de mí ✒️
 :man_technologist: Diego Prystupczuk - Fullstack developer 
