@@ -2,7 +2,9 @@
 
 
 # [ES] Manejo de Peluquería
-Unos de mis primeros proyectos en C# realizado para una peluquería. Puedes observar el [video](https://youtu.be/venyxoI--KQ).
+Unos de mis primeros proyectos en C# realizado para una peluquería. 
+
+:movie_camera: Puedes observar el [video](https://youtu.be/venyxoI--KQ).
 
 ### Descripción: :rocket:
 _Es un software simple para manejar los clientes de una peluquería._
