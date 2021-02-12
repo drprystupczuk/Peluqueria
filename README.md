@@ -1,5 +1,7 @@
 # [EN] Hairdressing Management
-One of my first C# desktop projects. You can check in this [video](https://youtu.be/venyxoI--KQ).
+One of my first C# desktop projects. 
+
+:movie_camera: You can see the [video](https://youtu.be/venyxoI--KQ).
 
 ### Description: :rocket:
 _This is a simple software to manage hairdressing clients ._
