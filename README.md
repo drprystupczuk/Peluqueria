@@ -1,11 +1,12 @@
 # [EN] Hairdressing Management
-One of my first desktop projects. You can check in this [video](https://youtu.be/venyxoI--KQ).
+One of my first C# desktop projects. You can check in this [video](https://youtu.be/venyxoI--KQ).
 
 ### Description: :rocket:
 _This is a simple software to manage hairdressing clients ._
 
 ### About me ✒️
-Diego Prystupczuk - Fullstack developer 
+:man_technologist: Diego Prystupczuk - Fullstack developer 
+- [Linkedin](https://www.linkedin.com/in/diegoprystupczuk/)
 - [github](https://github.com/drprystupczuk)
 - [youtube](https://www.youtube.com/channel/UCSeVAET6K1b8HLVULdzluXg)
 - [twitter](https://twitter.com/DPrystupczuk)
