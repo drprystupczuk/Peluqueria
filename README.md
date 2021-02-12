@@ -4,7 +4,9 @@ One of my first C# desktop projects.
 
 
 ### Description :rocket:
-_This is a simple software to manage hairdressing clients. :movie_camera: You can see the [video](https://youtu.be/venyxoI--KQ)._
+_This is a simple software to manage hairdressing clients._
+
+:movie_camera: You can see the [video](https://youtu.be/venyxoI--KQ)
 
 ### About me ✒️
 :man_technologist: Diego Prystupczuk - Fullstack developer 
