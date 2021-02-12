@@ -2,7 +2,7 @@
 
 
 # [ES] Manejo de Peluquería
-Unos de mis primeros proyectos en C# realizado para una peluquería. 
+Unos de mis primeros proyectos de escritorio en C#. 
 
 :movie_camera: Puedes observar el [video](https://youtu.be/venyxoI--KQ).
 
