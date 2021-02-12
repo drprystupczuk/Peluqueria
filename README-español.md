@@ -1,4 +1,4 @@
-# [ES] Manejo de Peluquería
+# [ES] Manejo de Peluquería :haircut::haircut_man:
 Unos de mis primeros proyectos de escritorio en C#. 
 
 ### Descripción :rocket:
